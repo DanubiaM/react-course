@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card';
-
+import Lista from './components/Lista';
 
 function App() {
 
@@ -13,7 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      <Card/>   
+      <Card/>
+      <Lista/>
+      <Lista/>
     </div>
   );
 }
