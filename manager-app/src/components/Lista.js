@@ -6,8 +6,8 @@ function Lista(){
         <>
            
            <ul>
-            <Item value="Wife"></Item>
-            <Item value="Son"></Item>
+            <Item marca="Fiat" ano_lancamento={2000}></Item>
+            <Item marca="BMW"></Item>
 
            </ul>
         </>
