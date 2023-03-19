@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card';
 import Lista from './components/Lista';
+import Button from './components/Button';
 
 function App() {
 
@@ -15,6 +16,10 @@ function App() {
     <div className="App">
       <Card/>
       <Lista/>
+      <Button valor="1"></Button>
+      <Button valor="2"/>
+
+
 
     </div>
   );
