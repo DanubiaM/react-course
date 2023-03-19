@@ -1,0 +1,16 @@
+.card{
+    background-color: #e2e2e2;
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px 1px #000 ;
+    width:50%;
+    margin-inline: 30%;
+    padding:10px; 
+}
+
+.body{
+    background-color: #eeecec;
+    box-shadow: 1px 2px 1px 1px #000000a2 ;
+    border-radius: 50px 1px 50px 1px;
+    padding: 10% 5px
+
+}
