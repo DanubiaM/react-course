@@ -1,6 +1,7 @@
 import SayMyName from "./SayMyName";
 import Pessoa from "./Pessoa";
 import styles from "./Card.module.css"
+import Form from "./Form";
 
 function Card(){
     const nome = "John Wick"
@@ -17,6 +18,7 @@ function Card(){
                  url={url}/>   
                 <SayMyName name={nome}/>
 
+            <Form/>
             </div>
         </div>
     )
