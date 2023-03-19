@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card';
+
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
         Are don't now {name} 
 
         <p>{sum(1,2)}</p>
+        <Card/>
         <a
           className="App-link"
           href="https://reactjs.org"
