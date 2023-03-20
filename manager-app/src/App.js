@@ -3,13 +3,14 @@ import './App.css';
 import Card from './components/Card';
 import Lista from './components/Lista';
 import Button from './components/Button';
+import ButtonEvents from './components/eventos/ButtonEvents';
 
 function App() {
 
   const name = "Danubia"
 
-  function sum(a,b){
-    return a+b
+  function evento(){
+    console.log("Fui ativado")
   }
 
   return (
@@ -17,9 +18,7 @@ function App() {
       <Card/>
       <Lista/>
       <Button valor="1"></Button>
-      <Button valor="2"/>
-
-
+      <ButtonEvents event={evento} texto={"HAHAHAHA"}></ButtonEvents>
 
     </div>
   );
