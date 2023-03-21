@@ -4,12 +4,14 @@ import Card from './components/Card';
 import Lista from './components/Lista';
 import Button from './components/Button';
 import ButtonEvents from './components/eventos/ButtonEvents';
-
+import Condicional from './components/Condicional';
 function App() {
 
   const name = "Danubia"
+ 
 
-  function evento(){
+  function evento(e){
+    e.preventDefault()
     console.log("Fui ativado")
   }
 
@@ -19,6 +21,7 @@ function App() {
       <Lista/>
       <Button valor="1"></Button>
       <ButtonEvents event={evento} texto={"HAHAHAHA"}></ButtonEvents>
+      <Condicional/>
 
     </div>
   );
