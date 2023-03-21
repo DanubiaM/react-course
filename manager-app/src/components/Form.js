@@ -1,14 +1,13 @@
 import {useState} from 'react'
 
-function Form(){
+function Form({setNome}){
 
     function cadastrar(e){
         e.preventDefault()
-        console.log(`Usuario ${usuario} com senha ${password} nascido ${born} com nome ${name}`)
+        console.log(`Usuario ${usuario} com senha ${password} nascido ${born}`)
         console.log("Enviando to ")
     }
 
-    const [name, setName] = useState()
     const [usuario, setUsuario] = useState("DanubiaM")
     const [born, setBorn] = useState()
     const [password, setPassword] = useState()
@@ -23,7 +22,7 @@ function Form(){
             <form onSubmit={cadastrar}>
                 <div>
                     <label htmoFor="name"> Inser your name</label>
-                    <input type="text" name="name" id="name" placeholder="Name" onChange={(e) => setName(e.target.value)}/> 
+                    <input type="text"  placeholder="Name" onChange={(e) => setNome(e.target.value)}/> 
                 </div>
                 <div>
                     <label htmlFor="born">Your born</label>
