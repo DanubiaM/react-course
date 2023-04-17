@@ -3,6 +3,12 @@ import Styles from './ProjectCard.module.css'
 
 function ProjectCard({id, name, budget, category, handleRemove}){
 
+    const remove = (e) => {
+        e.preventDefault()
+        handleRemove(id)
+    }
+
+
     return (
     <div className={Styles.project_card}>
         <h4>{name}</h4>
@@ -17,7 +23,7 @@ function ProjectCard({id, name, budget, category, handleRemove}){
            <p>Editar</p>
            
            </Link>
-            <button>
+            <button onClick={remove}>
             <p>Remover</p>
 
             </button>

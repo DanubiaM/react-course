@@ -11,24 +11,28 @@ function Projects(){
     console.log(Loading)
 
     const [projects, setProjects] = useState([])
-    const [removeLoading, setRemoveLoading] = useState(true)
+    const [removeLoading, setRemoveLoading] = useState(false)
+    const [projectMessage, setProjectMessage] = useState('')
 
-    useEffect(()=>{
-       setTimeout(()=>{
-        fetch('http://localhost:5000/projects',{
-            method:'GET',
-            headers:{
-                'Content-Type':'application/json'
-            },
-        }).then(resp => resp.json() )
-          .then(data =>{
-            setProjects(data)
-            setRemoveLoading(true)
-        })
-        .catch((err) => console.log(err))
-                
-       },3000)
-    },[])
+
+    useEffect(() => {
+        // Para ver o loading
+        setTimeout(
+          () =>
+            fetch('http://localhost:5000/projects', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            })
+              .then((resp) => resp.json())
+              .then((data) => {
+                setProjects(data)
+                setRemoveLoading(true)
+              }),
+          100,
+        )
+      }, [])
 
     const location = useLocation()
     let message = ''
@@ -37,6 +41,19 @@ function Projects(){
         message = location.state.message
     }
 
+    function removeProject(id) {
+        fetch(`http://localhost:5000/projects/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((resp) => resp.json())
+          .then((data) => {
+            setProjects(projects.filter((project) => project.id !== id))
+            setProjectMessage('Projeto removido com sucesso!')
+          })
+      }
     return (
         <div className={Styles.project_container}>
             <div className={Styles.title_container}>
@@ -45,7 +62,8 @@ function Projects(){
 
             </div>    
             {message && <Message type="success" msg={message}/>}
-            
+            {projectMessage && <Message type="success" msg={projectMessage}/>}
+
             <Container customClass="start">
                 {projects.length > 0 &&
                     projects.map((project) =>(
@@ -54,12 +72,13 @@ function Projects(){
                                      budget={project.budget}
                                      category={project.category.name}
                                      key={project.id}
+                                     handleRemove={removeProject}
                                     >
                         </ProjectCard>
                     ))}
                     {!removeLoading & <Loading/>}
-                    {removeLoading & projects.length === 0 && (
-                        <p>Não há projetos cadastrados</p>
+                    {removeLoading && projects.length === 0 && (
+                        <p>Não há projetos cadastrados!</p>
                     )}
 
             </Container>

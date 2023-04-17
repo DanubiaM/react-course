@@ -45,17 +45,6 @@
       "id": 4
     },
     {
-      "name": "UI",
-      "budget": "3242",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 5
-    },
-    {
       "name": "Danubia Gama Macedo",
       "budget": "34",
       "category": {
@@ -65,17 +54,6 @@
       "cost": 0,
       "services": [],
       "id": 6
-    },
-    {
-      "name": "UI",
-      "budget": "3422",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 7
     }
   ],
   "categories": [
